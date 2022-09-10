@@ -1,7 +1,7 @@
 <div>
-    <div class="welcome w-full h-screen flex justify-center items-center px-32 py-16">
+    <div class="welcome w-full h-96 lg:h-screen flex justify-center items-center px-4 lg:px-32 py-4 lg:py-16">
 
-        <div class="welcome-container w-full h-full p-16 border-sky-500 border-4 flex flex-col justify-center items-center gap-4 rounded-xl">
+        <div class="welcome-container w-full h-full p-2 lg:p-16 border-sky-500 border-4 flex flex-col justify-center items-center gap-4 rounded-xl">
 
             <livewire:livewire-line-chart key="{{ now() }}" :line-chart-model="$measurementsOverTime" />
 
@@ -9,7 +9,7 @@
 
     </div>
 
-    <div class="table w-full px-32 py-16 flex flex-col gap-16">
+    <div class="table w-full px-4 lg:px-32 py-4 lg:py-16 flex flex-col gap-16">
 
         @if($measurements->first()->mq > 3500)
 
@@ -17,7 +17,7 @@
 
                 <p class="text-white">Warning! Smoke detected.</p>
 
-                <audio autoplay hidden src="{{ asset('assets/radar.mp3') }}"></audio>
+                <audio autoplay src="{{ asset('assets/radar.mp3') }}"></audio>
 
             </div>
 
@@ -61,11 +61,11 @@
 
                     </td>
 
-                    <td class="text-center">{{ $measurement->mq }}</td>
+                    <td class="text-center text-sm lg:text-base">{{ $measurement->mq }}</td>
 
-                    <td class="text-center">{{ date('jS \o\f F, Y', strtotime($measurement->created_at)) }}</td>
+                    <td class="text-center text-xs lg:text-base">{{ date('jS \o\f F, Y', strtotime($measurement->created_at)) }}</td>
 
-                    <td class="text-center">{{ date('H:i:s', strtotime($measurement->created_at)) }}</td>
+                    <td class="text-center text-sm lg:text-base">{{ date('H:i:s', strtotime($measurement->created_at)) }}</td>
 
                 </tr>
 

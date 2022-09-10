@@ -42,7 +42,7 @@
 
     <body class="antialiased bg-gray-200 w-full min-h-screen">
 
-        <div class="header w-full px-32 py-4 bg-white shadow grid grid-cols-3 gap-4">
+        <div class="header w-full px-4 lg:px-32 py-4 bg-white shadow grid grid-cols-2 lg:grid-cols-3 gap-4">
 
             <div class="cerit-logo flex justify-start items-center">
 
@@ -52,13 +52,13 @@
 
             <div class="first-logo flex justify-center items-center">
 
-                <img src="{{ asset('assets/FIRST-logo.png') }}" alt="FIRST Global Logo" class="h-24">
+                <img src="{{ asset('assets/FIRST-logo.png') }}" alt="FIRST Global Logo" class="object-contain h-24">
 
             </div>
 
-            <div class="bosnia-flag flex flex-col justify-center items-end">
+            <div class="bosnia-flag col-span-2 lg:col-span-1 flex flex-row lg:flex-col justify-center items-center lg:items-end gap-8 lg:gap-0">
 
-                <img src="{{ asset('assets/Bosnia Flag.webp') }}" alt="CERIT Logo" class="h-16">
+                <img src="{{ asset('assets/Bosnia Flag.webp') }}" alt="Bosnia and Herzegovina Flag" class="h-12 lg:h-16">
 
                 <p class="text-lg font-bold text-gray-700">Team Bosnia and Herzegovina</p>
 
@@ -67,6 +67,8 @@
         </div>
 
         @livewire('home')
+
+        <p class="w-full text-center text-sm lg:text-base py-4">Developed and Designed by Team Bosnia and Herzergovina. (◕‿◕)</p>
 
     </body>
 

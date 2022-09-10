@@ -27,9 +27,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/e94e51d377.js" crossorigin="anonymous"></script>
+
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @livewireStyles
         @livewireScripts
+        @livewireChartsScripts
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -62,57 +66,7 @@
 
         </div>
 
-        <div class="welcome w-full h-screen flex justify-center items-center px-32 py-16">
-
-            <div class="welcome-container w-full h-full p-16 bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col justify-center items-center gap-4 rounded-xl">
-
-                <h1 class="text-white text-4xl font-bold text-center">Lorem ipsum!</h1>
-
-                <p class="text-white text-lg text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-            </div>
-
-        </div>
-
-        <div class="table w-full px-32 py-16">
-
-            <table class="min-w-full">
-
-                <thead class="bg-gray-100 rounded-lg">
-
-                    <tr>
-
-                        <th scope="col" class="text-gray-500 font-medium pl-2">MQ</th>
-
-                        <th scope="col" class="text-gray-500 font-medium">Date</th>
-
-                        <th scope="col" class="text-gray-500 font-medium">Time</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    @foreach($measurements as $measurement)
-
-                        <tr class="bg-white h-10">
-
-                            <td class="text-center pl-2">{{ $measurement->mq }}</td>
-
-                            <td class="text-center">{{ date('jS \o\f F, Y', strtotime($measurement->created_at)) }}</td>
-
-                            <td class="text-center">{{ date('H:i:s', strtotime($measurement->created_at)) }}</td>
-
-                        </tr>
-
-                    @endforeach
-
-                </tbody>
-
-            </table>
-
-        </div>
+        @livewire('home')
 
     </body>
 

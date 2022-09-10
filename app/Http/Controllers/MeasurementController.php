@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewMeasurementCollected;
 use App\Models\Measurement;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,8 @@ class MeasurementController extends Controller
         $measurement->mq = $request->mq;
 
         $measurement->save();
+
+        event(new NewMeasurementCollected($measurement));
 
         return response(200);
 

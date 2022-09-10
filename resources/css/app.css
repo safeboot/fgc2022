@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind screens;
+@tailwind utilities;
+
+@layer base {
+
+    * {
+
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 16px;
+        scroll-behavior: smooth;
+
+    }
+
+}

@@ -60,7 +60,7 @@
 
                 <img src="{{ asset('assets/Bosnia Flag.webp') }}" alt="Bosnia and Herzegovina Flag" class="h-12 lg:h-16">
 
-                <p class="text-lg font-bold text-gray-700">Team Bosnia and Herzegovina</p>
+                <p class="text-lg font-bold text-gray-700 text-left lg:text-right">Team Bosnia and Herzegovina</p>
 
             </div>
 

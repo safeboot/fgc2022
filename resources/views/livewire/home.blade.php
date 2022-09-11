@@ -1,7 +1,7 @@
-<div>
-    <div class="welcome w-full h-96 lg:h-screen flex justify-center items-center px-4 lg:px-32 py-4 lg:py-16">
+<div class="flex flex-col gap-8">
+    <div class="welcome w-full h-96 lg:h-screen flex justify-center items-center px-4 lg:px-32 lg:py-12">
 
-        <div class="welcome-container w-full h-full p-2 lg:p-16 border-sky-500 border-4 flex flex-col justify-center items-center gap-4 rounded-xl">
+        <div class="welcome-container w-full h-full p-2 lg:p-16 bg-white border-sky-500 border-4 flex flex-col justify-center items-center gap-4 rounded-xl">
 
             <livewire:livewire-line-chart key="{{ now() }}" :line-chart-model="$measurementsOverTime" />
 
@@ -9,9 +9,9 @@
 
     </div>
 
-    <div class="table w-full px-4 lg:px-32 py-4 lg:py-16 flex flex-col gap-16">
+    <div class="table w-full px-4 lg:px-32 flex flex-col gap-16">
 
-        @if($measurements->first()->mq > 3500)
+        @if($measurements->first()->mq > 3700)
 
             <div class="w-full bg-red-400 rounded-t-lg p-8">
 
@@ -49,7 +49,7 @@
 
                     <td class="text-center pl-2">
 
-                        @if($measurement->mq < 3500)
+                        @if($measurement->mq < 3700)
 
                             <i class="fa-solid fa-check text-green-400"></i>
 
